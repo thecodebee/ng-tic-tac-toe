@@ -1,0 +1,15 @@
+<div>
+    <div class="scoreBoard">
+      <span>O has {{ o_wins }} wins</span>
+      <h2>Score Board</h2>
+      <span>X has {{ x_wins }} wins</span>
+    </div>
+    <div class="main-app">
+      <div id="details">
+        <h1>{{ title }}</h1>
+        <h2>Match #{{ matches }}</h2>
+      </div>
+      <board></board>
+      <button class="restart" (click)="restartGame()">Restart</button>
+    </div>
+</div>

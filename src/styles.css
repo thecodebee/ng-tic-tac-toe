@@ -1,0 +1,15 @@
+body {
+  background-color: #fff;
+  color: #fff;
+  font-family: 'Dosis', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  margin: 0px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3em;
+}
