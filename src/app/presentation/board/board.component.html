@@ -1,10 +1,14 @@
 <div>
-		<div class="gameStatus statusTurn" >
+		<div class="gameStatus" >
 			{{gameStatusMessage}}
 		</div>
-		<div class="board">
-			<div *ngFor="let square of squares">
-				<cell [pos]="square.pos" [mark]="square.mark" (play)="handleGame($event)"></cell>
-			</div>
+		<div class="board" *ngFor="let row of [0,1,2]">
+			<cell *ngFor="let col of [0,1,2]"
+				[state]="squares[col+row*3]"
+				(click)="handleMove(col+row*3)"
+			>
+			</cell>
 		</div>
+		<button class="restart" (click)="restartGame()">New Game</button>
 </div>
+	

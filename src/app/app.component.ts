@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Tic Tac Toe in Angular 4 with AngularCLI';
-  matches: number = 8;
-  o_wins: number = 2;
-  x_wins: number = 4;
+  title = 'Tic Tac Toe in Angular 4';
 }
