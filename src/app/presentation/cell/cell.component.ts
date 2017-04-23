@@ -1,22 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core';
+
+import { Square } from '../../models/square';
 
 @Component({
   selector: 'cell',
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.scss']
 })
-export class CellComponent implements OnInit {
-  // enables the player to place a mark
-  frozen: false;
-  // holds either X or O to be displayed in the td
-  mark: string = 'X';
+export class CellComponent {
+  @Input()
+  pos: string;
 
-  constructor() { }
+  @Input()
+  mark: string;
   
-  ngOnInit() {
+  @Output()
+  play : EventEmitter<string> = new EventEmitter<string>();
+
+  ngOnChanges(changes) {
+    if (changes.mark) {
+      this.mark = changes.mark.currentValue;
+    }
   }
-  
-  strike() {
-    console.log("clicked ==");
+
+  onPlay(pos: string) {
+    this.play.emit(pos);
   }
 }

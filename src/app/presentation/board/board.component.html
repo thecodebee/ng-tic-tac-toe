@@ -1,17 +1,10 @@
 <div>
 		<div class="gameStatus statusTurn" >
-			{{ gameStatusMessage }}
+			{{gameStatusMessage}}
 		</div>
-
 		<div class="board">
-			<cell name="1"></cell>
-			<cell name="2"></cell>
-			<cell name="3"></cell>
-			<cell name="4"></cell>
-			<cell name="5"></cell>
-			<cell name="6"></cell>
-			<cell name="7"></cell>
-			<cell name="8"></cell>
-			<cell name="9"></cell>
+			<div *ngFor="let square of squares">
+				<cell [pos]="square.pos" [mark]="square.mark" (play)="handleGame($event)"></cell>
+			</div>
 		</div>
 </div>
